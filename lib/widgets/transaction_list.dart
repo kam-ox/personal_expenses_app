@@ -35,7 +35,8 @@ class TransactionList extends StatelessWidget {
                 return Container(
                   margin: EdgeInsets.symmetric(horizontal: 9),
                   child: Card(
-                    shape: RoundedRectangleBorder( //Rounding card corners
+                    shape: RoundedRectangleBorder(
+                      //Rounding card corners
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     margin: EdgeInsets.symmetric(vertical: 6),
