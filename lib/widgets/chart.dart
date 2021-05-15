@@ -41,31 +41,31 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        // doesn't work
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      elevation: 3,
-      margin: EdgeInsets.all(8),
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-        color: Colors.grey.shade200,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: groupedTransactionValues.map((data) {
-            return Flexible(
-              fit: FlexFit.tight,
-              child: ChartBar(
-                data['day'],
-                data['amount'],
-                totalSpending == 0.0
-                    ? 0.0
-                    : (data['amount'] as double) / totalSpending,
-              ),
-            );
-          }).toList(),
+        shape: RoundedRectangleBorder(
+          // doesn't work
+          borderRadius: BorderRadius.circular(20.0),
         ),
-      ),
+        elevation: 3,
+        margin: EdgeInsets.all(8),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          color: Colors.grey.shade200,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: groupedTransactionValues.map((data) {
+              return Flexible(
+                fit: FlexFit.tight,
+                child: ChartBar(
+                  data['day'],
+                  data['amount'],
+                  totalSpending == 0.0
+                      ? 0.0
+                      : (data['amount'] as double) / totalSpending,
+                ),
+              );
+            }).toList(),
+          ),
+        ),
     );
   }
 }
